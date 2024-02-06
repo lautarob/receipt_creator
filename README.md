@@ -16,15 +16,17 @@ To use this program, you can create a `ShoppingBasket` object and add items to i
 
 Here's an example of how to use it:
 
-```ruby
-# Example usage
+## Example usage
 
+```ruby
 basket1 = ShoppingBasket.new
 basket1.add_item(2, 'book', 12.49)
 basket1.add_item(1, 'music CD', 14.99)
 basket1.add_item(1, 'chocolate bar', 0.85)
 
 basket1.generate_receipt
+
+```
 
 ## Testing
 
@@ -33,12 +35,12 @@ This program includes RSpec tests to ensure that it calculates sales tax and gen
 1. Clone this repository to your local machine:
 
    ```shell
-   git clone https://github.com/your-username/shopping-basket.git
+   git clone https://github.com/lautarob/receipt_creator.git
 
 2. Change to the project directory:
 
    ```shell
-   cd shopping-basket
+   cd receipt_creator
 
 3. Install the required RSpec gem if you haven't already:
 
@@ -48,4 +50,4 @@ This program includes RSpec tests to ensure that it calculates sales tax and gen
 4. Run the tests using the following command:
 
    ```shell
-   rspec test.rb
+   rspec receipt_creator.rb
