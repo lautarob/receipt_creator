@@ -1,5 +1,4 @@
 require_relative '../lib/shopping_basket'
-require_relative '../lib/item'
 require 'rspec'
 
 RSpec.describe ShoppingBasket do

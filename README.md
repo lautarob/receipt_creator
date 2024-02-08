@@ -21,7 +21,7 @@ The `ShoppingBasket` class is at the core of this application. You can instantia
 Here's a quick start guide:
 
 ```ruby
-require_relative 'path/to/lib/shopping_basket'
+require_relative '../lib/shopping_basket'
 
 # Initialize a new Shopping Basket
 basket = ShoppingBasket.new
@@ -32,7 +32,7 @@ basket.add_item(1, 'bottle of perfume', 18.99)
 basket.add_item(1, 'packet of headache pills', 9.75)
 basket.add_item(1, 'imported box of chocolates', 11.25)
 
-# Generate and print the receipt to STDOUT
+# Generate and print the receipt
 basket.generate_receipt
 ```
 
@@ -43,8 +43,6 @@ Comprehensive RSpec tests are included to verify functionality across different 
 ## Running Tests
 
 To run the tests, ensure you have RSpec installed. If not, you can install it with:
-
-Install the required RSpec gem if you haven't already:
 
    ```shell
    gem install rspec
