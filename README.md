@@ -1,53 +1,70 @@
 # Shopping Basket
 
-This is a simple Ruby program that simulates a shopping basket and calculates sales taxes on items. It's designed to handle different types of products and apply the appropriate taxes based on certain rules.
+This Ruby application simulates a shopping basket, designed to manage purchases and calculate sales taxes according to specific rules. It elegantly handles tax calculations for both exempt and non-exempt items, including imported goods, ensuring accurate billing and receipt generation.
 
 ## Features
 
-- Add items to the shopping basket with quantity, name, and price.
-- Calculate sales tax for items based on their type (exempt or imported).
-- Generate a receipt that lists items, their prices, and the total cost, including taxes.
-- Round sales tax to the nearest 0.05 for each item.
-- Format numbers with two decimal places in the output.
+- **Item Management**: Add items with quantity, name, and price.
+- **Tax Calculation**: Automatically calculates sales tax for items, distinguishing between exempt, non-exempt, and imported products.
+- **Receipt Generation**: Produces a detailed receipt that includes each item's final price (tax inclusive) and the total cost.
+- **Tax Rounding**: Rounds sales tax to the nearest 0.05 for precise accounting.
+- **Formatted Output**: Ensures all numbers are presented with two decimal places for readability.
+
+## Installation
+
+No installation is necessary for running this program directly. However, ensure Ruby is installed on your system. This program was developed and tested with Ruby 3.0.0, but it should be compatible with most recent Ruby versions.
 
 ## Usage
 
-To use this program, you can create a `ShoppingBasket` object and add items to it using the `add_item` method. Then, you can generate a receipt using the `generate_receipt` method.
+The `ShoppingBasket` class is at the core of this application. You can instantiate this class and use its methods to simulate a shopping experience.
 
-Here's an example of how to use it:
-
-## Example usage
+Here's a quick start guide:
 
 ```ruby
-basket1 = ShoppingBasket.new
-basket1.add_item(2, 'book', 12.49)
-basket1.add_item(1, 'music CD', 14.99)
-basket1.add_item(1, 'chocolate bar', 0.85)
+require_relative 'path/to/lib/shopping_basket'
 
-basket1.generate_receipt
+# Initialize a new Shopping Basket
+basket = ShoppingBasket.new
 
+# Add items to the basket
+basket.add_item(1, 'imported bottle of perfume', 27.99)
+basket.add_item(1, 'bottle of perfume', 18.99)
+basket.add_item(1, 'packet of headache pills', 9.75)
+basket.add_item(1, 'imported box of chocolates', 11.25)
+
+# Generate and print the receipt to STDOUT
+basket.generate_receipt
 ```
 
-## Testing
+# Testing
 
-This program includes RSpec tests to ensure that it calculates sales tax and generates correct receipts for different scenarios. To run the tests, follow these instructions:
+Comprehensive RSpec tests are included to verify functionality across different scenarios, from tax calculations to receipt generation.
 
-1. Clone this repository to your local machine:
+## Running Tests
 
-   ```shell
-   git clone https://github.com/lautarob/receipt_creator.git
+To run the tests, ensure you have RSpec installed. If not, you can install it with:
 
-2. Change to the project directory:
-
-   ```shell
-   cd receipt_creator
-
-3. Install the required RSpec gem if you haven't already:
+Install the required RSpec gem if you haven't already:
 
    ```shell
    gem install rspec
+   ```
 
-4. Run the tests using the following command:
+Then Clone this repository to your local machine:
+   ```shell
+   git clone https://github.com/lautarob/receipt_creator.git
+   ```
+
+Change to the project directory:
 
    ```shell
-   rspec receipt_creator.rb
+   cd receipt_creator
+   ```
+
+Run the tests using the following command:
+
+   ```shell
+   rspec
+   ```
+
+This will run all spec files located in the spec directory, providing a detailed report of each test case.
